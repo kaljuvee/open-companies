@@ -63,7 +63,7 @@ with st.sidebar:
     
     # Check environment variables
     db_configured = bool(os.getenv('MAIN_DB_URL'))
-    estonia_api_configured = bool(os.getenv('ESTONIA_API_AUTH_ID'))
+    estonia_api_configured = bool(os.getenv('ESTONIA_API_USERNAME') and os.getenv('ESTONIA_API_PASSWORD'))
     xai_configured = bool(os.getenv('XAI_API_KEY'))
     
     st.write("**System Status:**")
