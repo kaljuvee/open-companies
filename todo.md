@@ -39,12 +39,18 @@
 - [x] Test Estonia API integration
 - [x] Test database operations
 - [x] Test XAI API integration
-- [ ] Manual browser testing of all pages
+- [x] Manual browser testing of all pages
 
 ## GitHub Integration
 - [x] Configure GitHub repository connection
 - [x] Push code to main branch
 - [x] Verify deployment
+
+## Bug Fixes
+- [x] Fix Estonia API status check to use correct environment variables
+- [x] Add plotly to requirements.txt
+- [x] Fix EE Analytics page API method calls
+- [x] All services now show correct status (green checkmarks)
 
 ## Future Enhancements
 - [ ] Add support for other EU countries
