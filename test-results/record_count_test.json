@@ -1,0 +1,12 @@
+{
+  "test": "database_record_count",
+  "timestamp": "2025-11-24T15:47:41.148087",
+  "status": "passed",
+  "total_companies": 109,
+  "breakdown": {
+    "Active": 103,
+    "LIK": 5,
+    "MAA": 1
+  },
+  "message": "Database contains 109 companies"
+}
