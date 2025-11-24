@@ -1,0 +1,35 @@
+{
+  "test_name": "XAI API Integration Test",
+  "timestamp": "2025-11-24T14:35:32.330546",
+  "tests": [
+    {
+      "name": "XAI API Connection",
+      "status": "PASS",
+      "message": "XAI API connection successful"
+    },
+    {
+      "name": "Company Data Analysis",
+      "status": "PASS",
+      "message": "Analysis generated successfully",
+      "sample_output": "**Analysis of Test Company O\u00dc**\n\n1. **Company Identification and Location**:\n   - **Name**: Test Company O\u00dc \u2013 The suffix \"O\u00dc\" indicates that this is a private limited company (Osa\u00fching) under Estonian..."
+    },
+    {
+      "name": "Field Extraction",
+      "status": "PASS",
+      "message": "Field extraction successful",
+      "sample_output": "{'analysis': '**Structured Summary of Key Company Data**\\n\\n- **Name**: Sample Company\\n- **Identification Code**: \\n  - Registry Code: 11223344\\n- **Status**: Active\\n- **Address**: Test Street 123\\n..."
+    },
+    {
+      "name": "Insights Generation",
+      "status": "PASS",
+      "message": "Insights generated successfully",
+      "sample_output": "Let's analyze the provided data on Estonian companies and identify trends or actionable insights. The dataset includes three companies with their respective statuses. I'll break down the analysis and ..."
+    },
+    {
+      "name": "Statistics Summary",
+      "status": "PASS",
+      "message": "Summary generated successfully",
+      "sample_output": "**Summary of Company Registry Statistics (January to March)**\n\nThe provided data details the number of company deletions from a registry over a three-month period: January, February, and March. Below ..."
+    }
+  ]
+}

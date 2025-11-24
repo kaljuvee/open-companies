@@ -161,13 +161,19 @@ with tab1:
             status_map = {
                 "Liquidation (LIK)": "LIK",
                 "Bankruptcy (MAA)": "MAA",
+                "Active": "Active",
                 "All": None
             }
             db_status = status_map.get(status)
             try:
-                return get_companies(status=db_status, country_code='EE')
+                df = get_companies(status=db_status, country_code='EE')
+                if not df.empty:
+                    st.success(f"✅ Loaded {len(df)} companies from database")
+                return df
             except Exception as e:
                 st.error(f"Error fetching data from database: {str(e)}")
+                import traceback
+                st.error(traceback.format_exc())
                 return pd.DataFrame()
     
     # Handle refresh

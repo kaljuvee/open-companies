@@ -1,0 +1,38 @@
+{
+  "test_name": "Database Connection Test",
+  "timestamp": "2025-11-24T14:31:02.981949",
+  "tests": [
+    {
+      "name": "Database Connection",
+      "status": "PASS",
+      "message": "Database connection successful"
+    },
+    {
+      "name": "Schema Existence",
+      "status": "WARNING",
+      "message": "Schema 'company' not found - run SQL scripts to create"
+    },
+    {
+      "name": "Table Existence",
+      "status": "WARNING",
+      "message": "No tables found - run SQL scripts to create",
+      "expected_tables": [
+        "companies",
+        "ubos",
+        "events",
+        "statistics"
+      ],
+      "found_tables": []
+    },
+    {
+      "name": "Query Execution",
+      "status": "PASS",
+      "message": "Query execution successful"
+    },
+    {
+      "name": "Data Retrieval",
+      "status": "SKIP",
+      "message": "Companies table does not exist yet"
+    }
+  ]
+}

@@ -56,3 +56,6 @@
 - [ ] Add support for other EU countries
 - [ ] Implement real-time gazette RSS monitoring
 - [ ] Add bulk data export features
+
+## Current Issues
+- [x] Fix database data display in EE Analytics page - data not showing when Database mode selected

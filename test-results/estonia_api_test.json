@@ -1,0 +1,35 @@
+{
+  "test_name": "Estonia API Integration Test",
+  "timestamp": "2025-11-24T14:33:13.714446",
+  "tests": [
+    {
+      "name": "API Connection",
+      "status": "PASS",
+      "message": "API connection successful"
+    },
+    {
+      "name": "Get Company Details",
+      "status": "PASS",
+      "message": "Retrieved company details",
+      "sample_data": "{'keha': {'ettevotjad': {'item': [{'ariregistri_kood': 14854757, 'ettevotja_id': 9000261865, 'nimi': 'O\u00dc Tepagor', 'isikuandmed': {'hooneyhistu_liikmed': {'item': []}, 'kaardivalised_isikud': {'item':"
+    },
+    {
+      "name": "Get Liquidations",
+      "status": "WARNING",
+      "message": "Retrieved 0 liquidation records",
+      "sample_data": null
+    },
+    {
+      "name": "Get Bankruptcies",
+      "status": "WARNING",
+      "message": "Retrieved 0 bankruptcy records",
+      "sample_data": null
+    },
+    {
+      "name": "Company Search",
+      "status": "WARNING",
+      "message": "Search returned 0 results",
+      "sample_data": null
+    }
+  ]
+}
