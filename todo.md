@@ -59,3 +59,10 @@
 
 ## Current Issues
 - [x] Fix database data display in EE Analytics page - data not showing when Database mode selected
+
+## Real Data Integration
+- [x] Create utils/data_ingestor.py to download real company data via API
+- [x] Download CSV files from Estonian open data portal
+- [x] Import CSV data into database using SQLAlchemy
+- [x] Verify real data is displaying correctly (109 companies loaded)
+- [ ] Fix company search functionality in EE Analytics page
