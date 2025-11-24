@@ -66,3 +66,6 @@
 - [x] Import CSV data into database using SQLAlchemy
 - [x] Verify real data is displaying correctly (109 companies loaded)
 - [ ] Fix company search functionality in EE Analytics page
+
+## Testing
+- [x] Create tests/test_search_functionality.py to verify search filters
