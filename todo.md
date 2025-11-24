@@ -69,3 +69,8 @@
 
 ## Testing
 - [x] Create tests/test_search_functionality.py to verify search filters
+
+## Data Import
+- [x] Import 1000+ companies to make database meaningful for analytics
+- [x] Created scripts/quick_import.py for fast bulk imports
+- [x] Database now has 1,009 companies (981 Active, 27 LIK, 1 MAA)

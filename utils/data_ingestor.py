@@ -221,6 +221,65 @@ class EstonianDataIngestor:
         print(f"Could not parse date: {date_value}")
         return None
     
+    def bulk_import_companies(self, companies: List[Dict], batch_size: int = 500) -> int:
+        """
+        Import companies using bulk operations for much faster performance.
+        
+        Args:
+            companies: List of company dictionaries
+            batch_size: Number of companies to insert per batch
+            
+        Returns:
+            Number of companies imported
+        """
+        from sqlalchemy import create_engine
+        from sqlalchemy.orm import sessionmaker
+        import os
+        
+        print(f"Bulk importing {len(companies)} companies into database...")
+        
+        db_url = os.getenv('MAIN_DB_URL')
+        if not db_url:
+            raise ValueError("MAIN_DB_URL environment variable not set")
+        
+        engine = create_engine(db_url)
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        
+        imported_count = 0
+        failed_count = 0
+        
+        try:
+            for i in range(0, len(companies), batch_size):
+                batch = companies[i:i + batch_size]
+                
+                try:
+                    # Use bulk_insert_mappings for fast batch insert
+                    session.bulk_insert_mappings(
+                        type('companies', (), {}),  # Dummy class
+                        batch,
+                        render_nulls=True
+                    )
+                    session.commit()
+                    imported_count += len(batch)
+                    print(f"Imported batch {i//batch_size + 1}: {imported_count}/{len(companies)} companies")
+                except Exception as e:
+                    session.rollback()
+                    print(f"Error importing batch {i//batch_size + 1}: {e}")
+                    # Fall back to individual inserts for this batch
+                    for company in batch:
+                        try:
+                            insert_company(company)
+                            imported_count += 1
+                        except Exception as e2:
+                            print(f"Error importing company {company.get('registry_code')}: {e2}")
+                            failed_count += 1
+        finally:
+            session.close()
+        
+        print(f"\nImport complete: {imported_count} succeeded, {failed_count} failed")
+        return imported_count
+    
     def import_companies(self, companies: List[Dict], batch_size: int = 100) -> int:
         """
         Import companies into the database using SQLAlchemy.
